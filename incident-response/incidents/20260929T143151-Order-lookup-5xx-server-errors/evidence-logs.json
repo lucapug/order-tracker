@@ -1,0 +1,218 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "streams",
+    "result": [
+      {
+        "stream": {
+          "code_file_path": "/app/app/main.py",
+          "code_function_name": "_record_lookup",
+          "code_line_number": "114",
+          "detected_level": "info",
+          "flags": "3",
+          "http_response_status_code": "500",
+          "http_route": "/api/orders/{order_id}",
+          "observed_timestamp": "1790692148827866960",
+          "order_id": "express-1002",
+          "scope_name": "order_tracker",
+          "service_instance_id": "f07f07b4-0e63-4e99-9654-1cc07c487349",
+          "service_name": "order-tracker",
+          "severity_number": "9",
+          "severity_text": "INFO",
+          "span_id": "90d5b09171e705c9",
+          "telemetry_sdk_language": "python",
+          "telemetry_sdk_name": "opentelemetry",
+          "telemetry_sdk_version": "1.45.0",
+          "trace_id": "77b1ce02b463018b3b775c5283221862"
+        },
+        "values": [
+          [
+            "1790692148827758336",
+            "order lookup express-1002 -> 500 trace_id=77b1ce02b463018b3b775c5283221862"
+          ]
+        ]
+      },
+      {
+        "stream": {
+          "code_file_path": "/app/app/main.py",
+          "code_function_name": "_record_lookup",
+          "code_line_number": "114",
+          "detected_level": "info",
+          "flags": "3",
+          "http_response_status_code": "500",
+          "http_route": "/api/orders/{order_id}",
+          "observed_timestamp": "1790692298668555710",
+          "order_id": "express-1002",
+          "scope_name": "order_tracker",
+          "service_instance_id": "f07f07b4-0e63-4e99-9654-1cc07c487349",
+          "service_name": "order-tracker",
+          "severity_number": "9",
+          "severity_text": "INFO",
+          "span_id": "fcbac7025b2466a1",
+          "telemetry_sdk_language": "python",
+          "telemetry_sdk_name": "opentelemetry",
+          "telemetry_sdk_version": "1.45.0",
+          "trace_id": "cf43d600d632dce99d9a80291b869089"
+        },
+        "values": [
+          [
+            "1790692298668444928",
+            "order lookup express-1002 -> 500 trace_id=cf43d600d632dce99d9a80291b869089"
+          ]
+        ]
+      }
+    ],
+    "stats": {
+      "summary": {
+        "bytesProcessedPerSecond": 81373,
+        "linesProcessedPerSecond": 387,
+        "totalBytesProcessed": 420,
+        "totalLinesProcessed": 2,
+        "execTime": 0.005161,
+        "queueTime": 3.7e-05,
+        "subqueries": 0,
+        "totalEntriesReturned": 2,
+        "splits": 0,
+        "shards": 1,
+        "totalPostFilterLines": 2,
+        "totalStructuredMetadataBytesProcessed": 272
+      },
+      "querier": {
+        "store": {
+          "totalChunksRef": 0,
+          "totalChunksDownloaded": 0,
+          "chunksDownloadTime": 0,
+          "queryReferencedStructuredMetadata": false,
+          "chunk": {
+            "headChunkBytes": 0,
+            "headChunkLines": 0,
+            "decompressedBytes": 0,
+            "decompressedLines": 0,
+            "compressedBytes": 0,
+            "totalDuplicates": 0,
+            "postFilterLines": 0,
+            "headChunkStructuredMetadataBytes": 0,
+            "decompressedStructuredMetadataBytes": 0
+          },
+          "chunkRefsFetchTime": 0,
+          "congestionControlLatency": 0,
+          "pipelineWrapperFilteredLines": 0
+        }
+      },
+      "ingester": {
+        "totalReached": 1,
+        "totalChunksMatched": 1,
+        "totalBatches": 2,
+        "totalLinesSent": 2,
+        "store": {
+          "totalChunksRef": 0,
+          "totalChunksDownloaded": 0,
+          "chunksDownloadTime": 0,
+          "queryReferencedStructuredMetadata": false,
+          "chunk": {
+            "headChunkBytes": 420,
+            "headChunkLines": 2,
+            "decompressedBytes": 0,
+            "decompressedLines": 0,
+            "compressedBytes": 0,
+            "totalDuplicates": 0,
+            "postFilterLines": 2,
+            "headChunkStructuredMetadataBytes": 272,
+            "decompressedStructuredMetadataBytes": 0
+          },
+          "chunkRefsFetchTime": 119792,
+          "congestionControlLatency": 0,
+          "pipelineWrapperFilteredLines": 0
+        }
+      },
+      "cache": {
+        "chunk": {
+          "entriesFound": 0,
+          "entriesRequested": 0,
+          "entriesStored": 0,
+          "bytesReceived": 0,
+          "bytesSent": 0,
+          "requests": 0,
+          "downloadTime": 0,
+          "queryLengthServed": 0
+        },
+        "index": {
+          "entriesFound": 0,
+          "entriesRequested": 0,
+          "entriesStored": 0,
+          "bytesReceived": 0,
+          "bytesSent": 0,
+          "requests": 0,
+          "downloadTime": 0,
+          "queryLengthServed": 0
+        },
+        "result": {
+          "entriesFound": 0,
+          "entriesRequested": 0,
+          "entriesStored": 0,
+          "bytesReceived": 0,
+          "bytesSent": 0,
+          "requests": 0,
+          "downloadTime": 0,
+          "queryLengthServed": 0
+        },
+        "statsResult": {
+          "entriesFound": 0,
+          "entriesRequested": 0,
+          "entriesStored": 0,
+          "bytesReceived": 0,
+          "bytesSent": 0,
+          "requests": 0,
+          "downloadTime": 0,
+          "queryLengthServed": 0
+        },
+        "volumeResult": {
+          "entriesFound": 0,
+          "entriesRequested": 0,
+          "entriesStored": 0,
+          "bytesReceived": 0,
+          "bytesSent": 0,
+          "requests": 0,
+          "downloadTime": 0,
+          "queryLengthServed": 0
+        },
+        "seriesResult": {
+          "entriesFound": 0,
+          "entriesRequested": 0,
+          "entriesStored": 0,
+          "bytesReceived": 0,
+          "bytesSent": 0,
+          "requests": 0,
+          "downloadTime": 0,
+          "queryLengthServed": 0
+        },
+        "labelResult": {
+          "entriesFound": 0,
+          "entriesRequested": 0,
+          "entriesStored": 0,
+          "bytesReceived": 0,
+          "bytesSent": 0,
+          "requests": 0,
+          "downloadTime": 0,
+          "queryLengthServed": 0
+        },
+        "instantMetricResult": {
+          "entriesFound": 0,
+          "entriesRequested": 0,
+          "entriesStored": 0,
+          "bytesReceived": 0,
+          "bytesSent": 0,
+          "requests": 0,
+          "downloadTime": 0,
+          "queryLengthServed": 0
+        }
+      },
+      "index": {
+        "totalChunks": 0,
+        "postFilterChunks": 0,
+        "shardsDuration": 0,
+        "usedBloomFilters": false
+      }
+    }
+  }
+}

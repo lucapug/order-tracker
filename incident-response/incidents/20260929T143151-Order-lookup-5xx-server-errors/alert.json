@@ -1,0 +1,28 @@
+{
+  "status": "firing",
+  "labels": {
+    "alertname": "Order lookup 5xx server errors",
+    "endpoint": "/api/orders/{order_id}",
+    "grafana_folder": "Order Tracker",
+    "severity": "warning",
+    "window": "5m"
+  },
+  "annotations": {
+    "dashboard_url": "http://localhost:3000/d/order-tracker",
+    "description": "More than 0 order lookup requests failed with a 5xx status in the last 5 minutes. Endpoint: GET /api/orders/{order_id} (window: 5m, evaluation: 20s).",
+    "summary": "Server errors (5xx) on order lookups"
+  },
+  "startsAt": "2026-09-29T14:31:50Z",
+  "endsAt": "0001-01-01T00:00:00Z",
+  "generatorURL": "http://localhost:3000/alerting/grafana/order-lookup-5xx/view?orgId=1",
+  "fingerprint": "04a950bf58f4e97d",
+  "silenceURL": "http://localhost:3000/alerting/silence/new?alertmanager=grafana&matcher=__alert_rule_uid__%3Dorder-lookup-5xx&matcher=endpoint%3D%2Fapi%2Forders%2F%7Border_id%7D&matcher=severity%3Dwarning&matcher=window%3D5m&orgId=1",
+  "dashboardURL": "",
+  "panelURL": "",
+  "values": {
+    "A": 1.0317865658673386,
+    "B": 1.0317865658673386,
+    "C": 1
+  },
+  "valueString": "[ var='A' labels={} value=1.0317865658673386 ], [ var='B' labels={} value=1.0317865658673386 ], [ var='C' labels={} value=1 ]"
+}

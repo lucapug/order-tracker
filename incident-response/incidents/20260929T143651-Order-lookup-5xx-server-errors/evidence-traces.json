@@ -1,0 +1,111 @@
+{
+  "traces": [
+    {
+      "traceID": "cf43d600d632dce99d9a80291b869089",
+      "rootServiceName": "order-tracker",
+      "rootTraceName": "GET /api/orders/{order_id}",
+      "startTimeUnixNano": "1790692298664597835",
+      "durationMs": 5,
+      "spanSet": {
+        "spans": [
+          {
+            "spanID": "fcbac7025b2466a1",
+            "startTimeUnixNano": "1790692298664597835",
+            "durationNanos": "5599375",
+            "attributes": [
+              {
+                "key": "service.name",
+                "value": {
+                  "stringValue": "order-tracker"
+                }
+              }
+            ]
+          }
+        ],
+        "matched": 1
+      },
+      "spanSets": [
+        {
+          "spans": [
+            {
+              "spanID": "fcbac7025b2466a1",
+              "startTimeUnixNano": "1790692298664597835",
+              "durationNanos": "5599375",
+              "attributes": [
+                {
+                  "key": "service.name",
+                  "value": {
+                    "stringValue": "order-tracker"
+                  }
+                }
+              ]
+            }
+          ],
+          "matched": 1
+        }
+      ],
+      "serviceStats": {
+        "order-tracker": {
+          "spanCount": 1,
+          "errorCount": 1
+        }
+      }
+    },
+    {
+      "traceID": "77b1ce02b463018b3b775c5283221862",
+      "rootServiceName": "order-tracker",
+      "rootTraceName": "GET /api/orders/{order_id}",
+      "startTimeUnixNano": "1790692148818628710",
+      "durationMs": 11,
+      "spanSet": {
+        "spans": [
+          {
+            "spanID": "90d5b09171e705c9",
+            "startTimeUnixNano": "1790692148818628710",
+            "durationNanos": "11919375",
+            "attributes": [
+              {
+                "key": "service.name",
+                "value": {
+                  "stringValue": "order-tracker"
+                }
+              }
+            ]
+          }
+        ],
+        "matched": 1
+      },
+      "spanSets": [
+        {
+          "spans": [
+            {
+              "spanID": "90d5b09171e705c9",
+              "startTimeUnixNano": "1790692148818628710",
+              "durationNanos": "11919375",
+              "attributes": [
+                {
+                  "key": "service.name",
+                  "value": {
+                    "stringValue": "order-tracker"
+                  }
+                }
+              ]
+            }
+          ],
+          "matched": 1
+        }
+      ],
+      "serviceStats": {
+        "order-tracker": {
+          "spanCount": 1,
+          "errorCount": 1
+        }
+      }
+    }
+  ],
+  "metrics": {
+    "inspectedBytes": "35917",
+    "completedJobs": 1,
+    "totalJobs": 1
+  }
+}

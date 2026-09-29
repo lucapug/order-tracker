@@ -1,0 +1,95 @@
+apiVersion: 1
+
+groups:
+  - orgId: 1
+    name: order-tracker
+    folder: Order Tracker
+    interval: 20s
+    rules:
+      - uid: order-lookup-5xx
+        title: Order lookup 5xx server errors
+        condition: C
+        data:
+          # A: 5xx lookups in the last 5 minutes; "or vector(0)" keeps the
+          # series at 0 when no 5xx has ever occurred, so the rule evaluates
+          # to Normal instead of No data during quiet periods.
+          - refId: A
+            relativeTimeRange:
+              from: 300
+              to: 0
+            datasourceUid: prometheus
+            model:
+              datasource:
+                type: prometheus
+                uid: prometheus
+              editorMode: code
+              expr: sum(increase(order_lookup_requests_total{http_response_status_code=~"5.."}[5m])) or vector(0)
+              instant: true
+              intervalMs: 1000
+              legendFormat: __auto
+              maxDataPoints: 43200
+              range: false
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              conditions:
+                - evaluator:
+                    params: []
+                    type: gt
+                  operator:
+                    type: and
+                  query:
+                    params: [B]
+                  reducer:
+                    params: []
+                    type: last
+                  type: query
+              datasource:
+                type: __expr__
+                uid: __expr__
+              expression: A
+              intervalMs: 1000
+              maxDataPoints: 43200
+              reducer: last
+              refId: B
+              settings:
+                mode: dropNN
+              type: reduce
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              conditions:
+                - evaluator:
+                    params: [0]
+                    type: gt
+                  operator:
+                    type: and
+                  query:
+                    params: [C]
+                  reducer:
+                    params: []
+                    type: last
+                  type: query
+              datasource:
+                type: __expr__
+                uid: __expr__
+              expression: B
+              intervalMs: 1000
+              maxDataPoints: 43200
+              refId: C
+              settings:
+                mode: dropNN
+              type: threshold
+        noDataState: OK
+        execErrState: Error
+        for: 0s
+        annotations:
+          summary: "Server errors (5xx) on order lookups"
+          description: "More than 0 order lookup requests failed with a 5xx status in the last 5 minutes. Endpoint: GET /api/orders/{order_id} (window: 5m, evaluation: 20s)."
+          dashboard_url: "http://localhost:3000/d/order-tracker"
+        labels:
+          endpoint: "/api/orders/{order_id}"
+          window: "5m"
+          severity: "warning"
+        isPaused: false

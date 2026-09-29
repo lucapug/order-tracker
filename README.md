@@ -22,6 +22,12 @@ ORDER_TRACKER_PORT=18080 docker compose up --build -d --wait
 
 Run tests with `uv run --frozen pytest -q`. Stop the app with `docker compose down`. Add `-v` only if you also want to delete the order data.
 
+## Telemetry stack
+
+Compose also starts the observability pipeline. The app sends metrics, logs, and traces via OTLP to an OpenTelemetry Collector, which forwards metrics to Prometheus, logs to Loki, and traces to Tempo. Grafana (<http://127.0.0.1:3000>, anonymous admin) ships with the datasources and the "Order Tracker" dashboard provisioned; the dashboard shows request counts and errors for order lookups, and the logs panel links each log line to its trace in Tempo.
+
+Configuration lives in `otelcol/`, `prometheus/`, `loki/`, `tempo/`, and `grafana/`. Without `OTEL_EXPORTER_OTLP_ENDPOINT` set (for example in tests) the app prints the same telemetry to the console instead.
+
 ## API
 
 | Method | Path | Purpose |

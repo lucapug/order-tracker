@@ -1,0 +1,25 @@
+You are the on-call engineer for Order Tracker, a small FastAPI order-tracking app.
+
+A Grafana alert just fired: {SUMMARY}
+Affected endpoint: {ENDPOINT}
+
+Everything known about the incident is saved in {INCIDENT_DIR}:
+- alert.json                          the alert payload from Grafana (labels, annotations, status)
+- evidence-metrics.json               current order_lookup_requests_total series from Prometheus
+- evidence-logs.json                  recent app logs from Loki (each line's labels include trace_id)
+- evidence-traces.json                recent traces from Tempo
+Evidence files may be empty or partial if gathering failed, or if this is a test alert.
+
+The application repository is at {REPO_DIR}.
+
+Your job:
+1. Read alert.json and the evidence files.
+2. If this is a test alert (label test=true, or no real 5xx errors in the evidence), do NOT change any code. Reply with a short assessment explaining that this is a test notification with nothing to fix.
+3. Otherwise investigate the incident: use the endpoint label, the 5xx logs, and the traces to identify the failing request, then find the root cause in the code.
+4. If you can fix it, fix the code in the repository and run the test suite with `uv run --frozen pytest -q` to make sure nothing is broken.
+5. Write a short incident report: what happened, the root cause, what you changed (files and reason), and how to verify.
+
+End your reply with exactly one final line in one of these formats:
+RESOLVED: <one line describing the fix>
+ESCALATE: <one line describing why you could not fix it>
+NO ACTION: <one line describing why no fix was needed>
